@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Reflection;
 
 namespace OneMediatorToRuleThemAll
 {
@@ -6,7 +9,15 @@ namespace OneMediatorToRuleThemAll
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddMediatR(Assembly.GetExecutingAssembly());
+
+            var serviceProvider = serviceCollection.BuildServiceProvider();
+
+            var mediatorService = serviceProvider.GetService<IMediator>();
+            var task = mediatorService.Send(new SendRingCommand() { From = "Frodo", To = "Sauron" });
+            Console.WriteLine(task.Result);
         }
     }
 }
