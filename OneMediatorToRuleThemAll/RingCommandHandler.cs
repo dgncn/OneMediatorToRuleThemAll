@@ -13,7 +13,7 @@ namespace OneMediatorToRuleThemAll
         {
             return Task.Factory.StartNew<string>(() =>
             {
-                return $"Ring is moving to {request.To} from {request.From}";
+                return $"Ring is moving {request.From} to {request.To}";
             });
         }
     }
