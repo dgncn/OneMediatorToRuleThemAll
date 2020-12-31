@@ -1,9 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace OneMediatorToRuleThemAll
+namespace OneMediatorToRuleThemAll.Command
 {
     public class SendRingCommand : IRequest<string>
     {

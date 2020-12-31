@@ -1,11 +1,9 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using OneMediatorToRuleThemAll.Command;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OneMediatorToRuleThemAll
+namespace OneMediatorToRuleThemAll.CommandHandlers
 {
     public class RingCommandHandler : IRequestHandler<SendRingCommand, string>
     {

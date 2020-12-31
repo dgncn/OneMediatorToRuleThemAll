@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using OneMediatorToRuleThemAll.Command;
 using System;
 using System.Reflection;
 
@@ -7,7 +8,7 @@ namespace OneMediatorToRuleThemAll
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var serviceCollection = new ServiceCollection();
 
